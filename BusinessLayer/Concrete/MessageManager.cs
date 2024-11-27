@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace BusinessLayer.Concrete
 {
 	public class MessageManager : IMessageService
 	{
+		IMessageDal _messageDal;
+
+		public MessageManager(IMessageDal messageDal)
+		{
+			_messageDal = messageDal;
+		}
+
 		public void TDelete(Message entity)
 		{
 			throw new NotImplementedException();
@@ -22,12 +30,12 @@ namespace BusinessLayer.Concrete
 
 		public List<Message> TGetList()
 		{
-			throw new NotImplementedException();
+			return _messageDal.GetList();
 		}
 
 		public void TInsert(Message entity)
 		{
-			throw new NotImplementedException();
+			_messageDal.Insert(entity);
 		}
 
 		public void TUpdate(Message entity)

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace BusinessLayer.Concrete
 {
 	public class ExperienceManager : IExperienceService
 	{
+		IExperienceDal _experienceDal;
+
+		public ExperienceManager(IExperienceDal experienceDal)
+		{
+			_experienceDal = experienceDal;
+		}
+
 		public void TDelete(Experience entity)
 		{
 			throw new NotImplementedException();
@@ -22,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public List<Experience> TGetList()
 		{
-			throw new NotImplementedException();
+			return _experienceDal.GetList();
 		}
 
 		public void TInsert(Experience entity)

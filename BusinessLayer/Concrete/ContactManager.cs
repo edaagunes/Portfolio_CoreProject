@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace BusinessLayer.Concrete
 {
 	public class ContactManager : IContactService
 	{
+		IContactDal _contactDal;
+
+		public ContactManager(IContactDal contactDal)
+		{
+			_contactDal = contactDal;
+		}
+
 		public void TDelete(Contact entity)
 		{
 			throw new NotImplementedException();
@@ -22,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public List<Contact> TGetList()
 		{
-			throw new NotImplementedException();
+			return _contactDal.GetList();
 		}
 
 		public void TInsert(Contact entity)

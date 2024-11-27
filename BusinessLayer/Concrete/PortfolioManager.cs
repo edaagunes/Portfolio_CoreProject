@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace BusinessLayer.Concrete
 {
 	public class PortfolioManager : IPortfolioService
 	{
+		IPortfolioDal _portfolioDal;
+
+		public PortfolioManager(IPortfolioDal portfolioDal)
+		{
+			_portfolioDal = portfolioDal;
+		}
+
 		public void TDelete(Portfolio entity)
 		{
 			throw new NotImplementedException();
@@ -22,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public List<Portfolio> TGetList()
 		{
-			throw new NotImplementedException();
+			return _portfolioDal.GetList();
 		}
 
 		public void TInsert(Portfolio entity)

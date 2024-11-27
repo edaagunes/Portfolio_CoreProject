@@ -11,6 +11,13 @@ namespace BusinessLayer.Concrete
 {
 	public class TestimonialManager : ITestimonialService
 	{
+		ITestimonialDal _testimonialDal;
+
+		public TestimonialManager(ITestimonialDal testimonialDal)
+		{
+			_testimonialDal = testimonialDal;
+		}
+
 		public void TDelete(Testimonial entity)
 		{
 			throw new NotImplementedException();
@@ -23,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public List<Testimonial> TGetList()
 		{
-			throw new NotImplementedException();
+			return _testimonialDal.GetList();
 		}
 
 		public void TInsert(Testimonial entity)
