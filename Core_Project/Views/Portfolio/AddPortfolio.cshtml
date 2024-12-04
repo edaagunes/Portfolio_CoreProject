@@ -1,0 +1,39 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-body" style="height:500px">
+    <h1>Yeni Deneyim</h1>
+    <form class="form-group" method="post">
+        <br /><br />
+        <label>Deneyim Başlığı</label>
+        <input type="text" name="Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+        <br />
+        <label>Görsel 1</label>
+        <input type="text" name="ImageUrl" class="form-control" />
+        <span class="text-danger" asp-validation-for="ImageUrl"></span>
+        <br />
+        <label>Görsel 2</label>
+        <input type="text" name="ImageUrl2" class="form-control" />
+        <span class="text-danger" asp-validation-for="ImageUrl2"></span>
+        <br />
+        <label>Proje Url</label>
+        <input type="text" name="ProjectUrl" class="form-control" />
+        <span class="text-danger" asp-validation-for="ProjectUrl"></span>
+        <br />
+        <label>Fiyat</label>
+        <input type="text" name="Price" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Price"></span>
+        <br />
+        <label>Değer</label>
+        <input type="text" name="Value" class="form-control" />
+        <span class="text-danger" asp-validation-for="Value"></span>
+        <br />
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+
+
