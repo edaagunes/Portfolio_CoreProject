@@ -1,0 +1,26 @@
+﻿@model Experience
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-body" style="height:500px">
+    <h1>Yeni Deneyim</h1>
+    <form class="form-group" method="post">
+        <br /><br />
+        <label>Deneyim Başlığı</label>
+        <input type="text" name="Name" class="form-control" />
+        <br />
+        <label>Tarih</label>
+        <input type="text" name="Date" class="form-control" />
+        <br />
+        <label>Görsel Url</label>
+        <input type="text" name="ImageUrl" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <textarea type="text" rows="5" cols="3" name="Description" class="form-control"></textarea>
+        <br />
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+
